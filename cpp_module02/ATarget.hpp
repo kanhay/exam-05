@@ -11,6 +11,9 @@ using std::cout;
 class ATarget{
         string type;
     public:
+        ATarget();
+        ATarget(ATarget const& ob);
+        ATarget &operator=(ATarget const& ob);
         ATarget(string const& t);
         virtual ~ATarget();
 

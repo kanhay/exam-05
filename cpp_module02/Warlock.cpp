@@ -27,5 +27,7 @@ void Warlock::forgetSpell(string name){
 }
 
 void Warlock::launchSpell(string name, ATarget const& target){
-    book.createSpell(name)->launch(target);
+    ASpell *tmp = book.createSpell(name);
+    if (tmp)
+        tmp->launch(target);
 }

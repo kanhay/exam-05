@@ -12,6 +12,9 @@ class ASpell{
         string name;
         string effects;
     public:
+        ASpell();
+        ASpell(ASpell const& ob);
+        ASpell &operator=(ASpell const& ob);
         ASpell(string const& n, string const& eff);
         virtual ~ASpell();
         

@@ -5,11 +5,13 @@ TargetGenerator::TargetGenerator(){}
 TargetGenerator::~TargetGenerator(){}
 
 void TargetGenerator::learnTargetType(ATarget* target){
-    mymap[target->getType()] = target;
+    if (target)
+        mymap[target->getType()] = target;
 }
 
 void TargetGenerator::forgetTargetType(string const &type){
-    mymap.erase(type);
+    if (mymap.find(type) != mymap.end())
+        mymap.erase(type);
 }
 
 ATarget* TargetGenerator::createTarget(string const &type){

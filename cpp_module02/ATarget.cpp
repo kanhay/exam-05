@@ -1,5 +1,16 @@
 #include "ATarget.hpp"
 
+ATarget::ATarget(){}
+
+ATarget::ATarget(ATarget const& ob){
+    *this = ob;
+}
+
+ATarget &ATarget::operator=(ATarget const& ob){
+    type = ob.getType();
+    return *this;
+}
+
 ATarget::ATarget(string const& t):type(t){}
 
 ATarget::~ATarget(){}
